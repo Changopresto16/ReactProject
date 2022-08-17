@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import Nav from './nav';
-import Home from './Home';
-import Contact from './Contact';
-import Third from './Third';
+import Nav from './components/nav';
+import Home from './views/Home';
+import Contact from './views/Contact';
+import Third from './views/Third';
+import News from './views/News';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import './App.css';
+import './index.css';
 
 export default class extends Component {
 	constructor() {
@@ -26,19 +27,17 @@ export default class extends Component {
 			<div className="container">
 				<BrowserRouter>
 					<Nav />
-          
 					{this.state.name}
           <br/>
 					{this.state.age}
           <br/>
           <br/>
-					<button class="button" onClick={this.addToAge}>Happy Birthday</button>
-
+					<button className="button" onClick={this.addToAge}>Happy Birthday</button>
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/contact" element={<Contact />} />
             			<Route path="/third" element={<Third />} />
-            
+						<Route path="/news" element={<News />} />
 					</Routes>
 				</BrowserRouter>
 			</div>

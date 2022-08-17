@@ -1,7 +1,14 @@
 .container{
-  background-color: antiquewhite;
+  background-color: rgb(234, 181, 111);
 }
 
-.card{
-  background-color: blanchedalmond ;
+.button{
+  margin-left: 40%;
+  padding-block: 20px;
+  color:chocolate;
+  background-color: blue;
+  border-radius: 40%;
+  border-width: 10px;
+  font-family: fantasy;
+  
 }
