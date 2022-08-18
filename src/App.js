@@ -1,46 +1,44 @@
-import React, { Component } from 'react';
-import Nav from './components/nav';
-import Home from './views/Home';
-import Contact from './views/Contact';
-import Third from './views/Third';
-import News from './views/News';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import './index.css';
+import React, { Component } from 'react'
+import Contact from './views/Contact'
+import Home from './views/Home'
+import Nav from './components/Nav'
+import Todo from './views/Todo'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 
-export default class extends Component {
-	constructor() {
-		super();
-		this.state = {
-			posts: [],
-			user: {},
-			name: 'Michael',
-			age: 9000,
-		};
-	}
 
-	addToAge = () => {
-		this.setState({age: this.state.age + 1})
-	}
+export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      posts: [],
+      user: {},
+      name: 'Shoha',
+      age: 9000
+    }
+  }
 
-	render() {
-		return (
-			<div className="container">
-				<BrowserRouter>
-					<Nav />
-					{this.state.name}
-          <br/>
-					{this.state.age}
-          <br/>
-          <br/>
-					<button className="button" onClick={this.addToAge}>Happy Birthday</button>
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/contact" element={<Contact />} />
-            			<Route path="/third" element={<Third />} />
-						<Route path="/news" element={<News />} />
-					</Routes>
-				</BrowserRouter>
-			</div>
-		);
-	}
+  addToAge = () => {
+    this.setState({age: this.state.age + 1})
+  }
+  
+
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+          <Nav />
+
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/contact' element={<Contact/>}/>
+            <Route path='/todo' element={<Todo/>}/>
+
+
+          </Routes>
+
+
+        </div>
+      </BrowserRouter>
+    )
+  }
 }
