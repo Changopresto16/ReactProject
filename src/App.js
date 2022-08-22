@@ -4,6 +4,7 @@ import Home from './views/Home'
 import Nav from './components/Nav'
 import Todo from './views/Todo'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import './App.css';
 
 
 export default class App extends Component {
@@ -32,8 +33,6 @@ export default class App extends Component {
             <Route path='/' element={<Home/>}/>
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/todo' element={<Todo/>}/>
-
-
           </Routes>
 
 
