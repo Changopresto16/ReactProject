@@ -3,6 +3,8 @@ import Contact from './views/Contact'
 import Home from './views/Home'
 import Nav from './components/Nav'
 import Todo from './views/Todo'
+import Login from './views/Login'
+import SignUp from './views/SignUp'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import './App.css';
 
@@ -19,9 +21,11 @@ export default class App extends Component {
   }
 
   addToAge = () => {
-    this.setState({age: this.state.age + 1})
+    this.setState({ age: this.state.age + 1 })
   }
-  
+
+
+
 
   render() {
     return (
@@ -30,9 +34,12 @@ export default class App extends Component {
           <Nav />
 
           <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/contact' element={<Contact/>}/>
-            <Route path='/todo' element={<Todo/>}/>
+            <Route path='/' element={<Home />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/todo' element={<Todo />} />
+            <Route path='/login' element={<Login logMeIn={this.logMeIn}/>}/>
+            <Route path='/signup' element={<SignUp/>}/>
+
           </Routes>
 
 
@@ -40,4 +47,5 @@ export default class App extends Component {
       </BrowserRouter>
     )
   }
+
 }
