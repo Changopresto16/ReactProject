@@ -39,14 +39,14 @@ export default class Todo extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="todo">
 				<form
 					onSubmit={(e) => {
 						this.addToDoItem(e)
 					}}
 				>
-					<input name='thing' />
-					<button>Add</button>
+					<input className='thing' name='thing' />
+					<button className='btnadd'>Add</button>
 				</form>
 					<div className="cardlist">
 					{this.showList()}

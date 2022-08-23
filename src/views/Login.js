@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "../App.css"
 
 export default class Login extends Component {
     sendLoginInfo = async (e) => {
@@ -55,7 +56,7 @@ export default class Login extends Component {
                     <input type="password" className="form-control" name='password' />
                 </div>
               
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button id="btn1" type="submit" className="btn btn-secondary">Submit</button>
             </form>
         )
     }
