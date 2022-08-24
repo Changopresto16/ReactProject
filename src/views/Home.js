@@ -4,7 +4,7 @@ import '../App.css'
 export default class Home extends Component {
   constructor() {
     super();
-    this.state = {'test': 'value'}
+    this.state = { 'test': 'value' }
     console.log('constructed the HOME component')
   }
 

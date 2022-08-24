@@ -1,51 +1,100 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import Contact from './views/Contact'
 import Home from './views/Home'
 import Nav from './components/Nav'
-import Todo from './views/Todo'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import Login from './views/Login'
 import SignUp from './views/SignUp'
-import { Routes, Route, BrowserRouter } from 'react-router-dom'
-import './App.css';
+import ToDoList from './views/Todo'
+import Shop from './views/Shop'
+import SingleProduct from './views/SingleProduct'
+import Cart from './views/Cart'
 
+export default function App() {
 
-export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      posts: [],
-      user: {},
-      name: 'Shoha',
-      age: 9000
+  const getUserFromLocalStorage = () => {
+    const foundUser = localStorage.getItem('user')
+    if (foundUser) {
+      return JSON.parse(foundUser)
     }
+    return {}
+  };
+
+
+  const [user, setUser] = useState(getUserFromLocalStorage())
+  const [cart, setCart] = useState([])
+
+
+
+  const logMeIn = (user) => {
+    setUser(user)
+    localStorage.setItem('user', JSON.stringify(user))
+  }
+  const logMeOut = () => {
+    setUser({})
+    localStorage.removeItem('user')
   }
 
-  addToAge = () => {
-    this.setState({ age: this.state.age + 1 })
+  const addToCart = (product) => {
+    setCart([...cart, product])
   }
 
-
-
-
-  render() {
-    return (
-      <BrowserRouter>
-        <div>
-          <Nav />
-
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/contact' element={<Contact />} />
-            <Route path='/todo' element={<Todo />} />
-            <Route path='/login' element={<Login logMeIn={this.logMeIn}/>}/>
-            <Route path='/signup' element={<SignUp/>}/>
-
-          </Routes>
-
-
-        </div>
-      </BrowserRouter>
-    )
+  const removeFromCart = (product) => {
+    const newCart = [...cart]
+    for (let i = cart.length - 1; i >= 0; i--) {
+      if (product.id == cart[i].id) {
+        newCart.splice(i, 1)
+        break
+      }
+    }
+    setCart(newCart)
   }
+
+  const getCart = async (user) => {
+    if (user.token) {
+      const res = await fetch('http://localhost:5000/api/cart', {
+        method: "GET",
+        headers: { Authorization: `Bearer ${user.token}` }
+      });
+      const data = await res.json();
+      console.log(data)
+      if (data.status === 'ok') {
+        setCart(data.cart)
+      }
+      else {
+        setCart([])
+      }
+    }
+    else {
+      setCart([])
+    }
+  };
+
+  useEffect(() => {
+    getCart(user)
+  }, [user])
+
+
+  return (
+    <BrowserRouter>
+      <div>
+        <Nav user={user} cart={cart} logMeOut={logMeOut} />
+
+
+        <Routes>
+          <Route path='/' element={<Home ageXYZ={9000} />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/login' element={<Login logMeIn={logMeIn} />} />
+          <Route path='/signup' element={<SignUp />} />
+          <Route path='/todo' element={<ToDoList />} />
+          <Route path='/shop' element={<Shop addToCart={addToCart} user={user} />} />
+          <Route path='/shop/:productId' element={<SingleProduct />} />
+          <Route path='/cart' element={<Cart cart={cart} removeFromCart={removeFromCart} user={user} />} />
+        </Routes>
+
+
+      </div>
+    </BrowserRouter>
+  )
 
 }

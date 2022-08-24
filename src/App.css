@@ -1,37 +1,37 @@
-h1{
+h1 {
     color: rgb(152, 123, 246);
 }
 
-.container{
-    
-  }
-  
+.container {}
 
-.cardlist{
-    align-content: center;
-    background-color: rgb(0, 153, 255);
-    color: rgb(195, 255, 0);
-    width: 14.2%;
-    margin: flex;
-    text-align: center;
+
+.cardlist {
+    border: 1em;
+    border-style: groove;
+    border-width: 1em;
+    margin-right: 40%;
+    background-color: aquamarine;
+    color: darkviolet;
 }
 
-.col-4{
-    margin-left:30%;
+
+.col-4 {
+    margin-left: 30%;
     margin-top: 5%;
     border-left: 10cm;
     border-radius: 10%;
     border: 1em;
-    border-style: double; color:rgb(139, 109, 167);
+    border-style: double;
+    color: rgb(139, 109, 167);
 }
 
-.mb-3{
+.mb-3 {
     color: rgb(8, 215, 177);
     margin: 6%;
-    
+
 }
 
-#btn1{
+#btn1 {
     margin-left: 10%;
     padding-left: 30%;
     padding-right: 30%;
@@ -41,20 +41,23 @@ h1{
     color: aquamarine;
 }
 
-.todo{
-    border-style: dotted;
-    border-width: 20%;
-    border-radius: 20%;
+.todo {
     margin-left: 40%;
     margin-top: 3%;
 }
 
-.btnadd{
+.btnadd {
     color: aquamarine;
     background-color: darkslateblue;
+    height: 1.58cm;
 
 }
 
-.thing{
+.thing {
     background-color: gray;
+    padding-left: 1%;
+    align-content: center;
+    border: 1em;
+    border-color: aquamarine;
+    border-style: double;
 }

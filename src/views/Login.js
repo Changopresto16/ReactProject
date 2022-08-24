@@ -14,7 +14,7 @@ export default class Login extends Component {
 
         const options = {
             method: "POST",
-            headers: {'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body)
         }
 
@@ -32,7 +32,7 @@ export default class Login extends Component {
         e.preventDefault();
         const res = await fetch('http://localhost:5000/token', {
             method: "POST",
-            headers: {Authorization: `Bearer ${btoa(e.target.username.value+":"+e.target.password.value)}`}
+            headers: { Authorization: `Bearer ${btoa(e.target.username.value + ":" + e.target.password.value)}` }
         });
         const data = await res.json();
         console.log(data)
@@ -55,7 +55,7 @@ export default class Login extends Component {
                     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                     <input type="password" className="form-control" name='password' />
                 </div>
-              
+
                 <button id="btn1" type="submit" className="btn btn-secondary">Submit</button>
             </form>
         )

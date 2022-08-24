@@ -40,7 +40,7 @@ export default class Todo extends Component {
 	render() {
 		return (
 			<div className="todo">
-				<form
+				<form className="form1"
 					onSubmit={(e) => {
 						this.addToDoItem(e)
 					}}
