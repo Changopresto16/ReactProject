@@ -19,7 +19,24 @@ export default class Home extends Component {
 
 
     return (
-      <h1>WELCOME TO THE HOME PAGE</h1>
-    )
+      <div>
+        <div class="cardhome">
+          <div class="card-header">
+            Header
+          </div>
+          <div class="card-body">
+            
+            <p class="card-text">
+            
+            </p>
+          </div>
+          <div class="card-footer text-muted">
+            Footer
+          </div>
+        </div>
+      
+
+      </div>
+    )  
   }
 }

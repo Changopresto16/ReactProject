@@ -1,14 +1,120 @@
-.navbar-nav{
-    color: blueviolet;
-
+.container{
+    margin-left: auto;
+    height: 200%;
+    
 }
+
 .container-fluid{
-    background-color: rgb(14, 218, 150);
+    display: flex;
+    flex-wrap: nowrap;
+    flex-shrink:inherit;
+    padding-left: 0em;
+    background-color: rgb(110, 112, 111);
+    border: 10px;
+    border-style: groove;
+    border-color: antiquewhite;
     
 
 }
 
-.navbar-brand{
-    color: brown;
+.navbar-nav{
+    flex-flow: nowrap;
+    text-align: center;
+    font-family: 'MedievalSharp', cursive;
+    font-size: larger;
 }
 
+.navbar-brand{
+    color: rgb(14, 218, 150);
+    font-family: monospace;
+    font-size: xx-large;
+    font-variant: small-caps;
+    padding-bottom: 39px;
+}
+
+.collapse{
+    color: gold;
+    
+}
+
+.nav-item{
+    margin: 1px;
+    width: 5em;
+}
+
+.nav-item-name{
+    color: gold;
+    margin-left: 18em;
+    margin-top: 2em;
+    font-size: x-large;
+}
+
+.nav-link1{
+    color: rgb(43, 217, 226);
+    text-decoration: none;
+
+}
+
+.nav-link2{
+    color: rgb(43, 217, 226);
+    text-decoration: none;
+}
+.nav-link3{
+    color: rgb(43, 217, 226);
+    text-decoration: none;
+}
+.nav-link4{
+    color: rgb(43, 217, 226);
+    text-decoration: none;
+}
+.nav-link5{
+    color: rgb(43, 217, 226);
+    text-decoration: none;
+}
+.nav-link6{
+    color: rgb(43, 217, 226);
+    text-decoration: none;
+}
+.nav-link7{
+    color: rgb(43, 217, 226);
+    text-decoration: none;
+}
+.nav-link8{
+    color: rgb(43, 217, 226);
+    text-decoration: none;
+    
+}
+.nav-link9{
+    color: rgb(223, 189, 78);
+    text-decoration: none;
+}
+
+
+
+
+.card{
+    margin: 3%;
+    background-color:gray;
+    border-style: ridge;
+    border-width: 3mm;
+    border-radius: 8%;
+    border-color: rgb(14, 218, 150);
+    
+}
+
+h5{
+    font-family: 'Rubik Marker Hatch', cursive}
+
+.card-body{
+    background-color: rgb(152, 123, 246);
+}
+
+.btnItem{
+    background-color: rgb(24, 161, 206);
+    color: rgb(65, 65, 65);
+    margin-left: 6%;
+    padding: 9%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+    font-size: xx-large;
+}

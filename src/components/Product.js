@@ -1,4 +1,5 @@
 import React from 'react';
+import './nav.css';
 
 
 export default function Product({ product, addToCart, user }) {
@@ -33,7 +34,7 @@ export default function Product({ product, addToCart, user }) {
                 <h5 className="card-title">{product.product_name}</h5>
                 <p className="card-text">{product.price}</p>
                 <p className="card-text">{product.description}</p>
-                <button onClick={()=>{handleClick(product)}} className="btn btn-primary">Add to Cart</button>
+                <button onClick={()=>{handleClick(product)}} className="btnItem">Add to Cart</button>
             </div>
         </div>
     )

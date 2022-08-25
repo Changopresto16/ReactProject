@@ -11,9 +11,9 @@ export default class ToDoItem extends Component {
     render() {
         return (
             <div className='todoitem'>{this.props.obj.text}
-                <input type='checkbox' checked={this.props.obj.complete} />
-                <button onClick={() => {this.handleClick()}}>Complete</button>
-                <button onClick={()=>{this.props.removeFromList(this.props.index)}}>x</button>
+                <input className='checkbox' type='checkbox' checked={this.props.obj.complete} />
+                <button className='complete' onClick={() => {this.handleClick()}}>Complete</button>
+                <button className='x' onClick={()=>{this.props.removeFromList(this.props.index)}}>x</button>
             </div>
 
 
